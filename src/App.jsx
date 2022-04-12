@@ -1,9 +1,9 @@
-import SearchArea from "./components/SearchArea/SearchArea";
+import MusicSearch from "./components/MusicSearch/MusicSearch";
 
 function App() {
   return (
     <div>
-     <SearchArea />
+     <MusicSearch />
     </div>
   );
 }
