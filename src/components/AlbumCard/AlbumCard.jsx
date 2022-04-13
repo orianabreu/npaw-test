@@ -14,7 +14,7 @@ export default function AlbumCard({ artwork, artist, albumName}) {
           height="140"
           width="140"
           image={artwork}
-          alt="green iguana"
+          alt={albumName}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">

@@ -10,7 +10,8 @@ export default function GridLayout({ children, showGrid }) {
         container
         spacing={5}
         columns={{ sm: 1, md: 4, lg: 6 }}
-        sx={{ display: "flex" }}>
+        sx={{ display: "flex" }}
+      >
         {children}
       </Grid>
     </Wrapper>
