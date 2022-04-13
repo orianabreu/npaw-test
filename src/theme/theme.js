@@ -5,12 +5,16 @@ const theme = createTheme({
   palette: {
     primary: {
       main: deepOrange[500],
-      pink: pink[300],
     },
     secondary: {
-      main: grey[900],
-      light: grey[50],
+      main: pink[300],
     },
+    dark: {
+      main: grey[900]
+    },
+    light: {
+      main: grey[50]
+    }
   },
   typography: {
     fontFamily: "Helvetica Neue, Arial, sans-serif",
