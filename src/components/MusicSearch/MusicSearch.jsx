@@ -14,7 +14,7 @@ export default function MusicSearch() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const { searchResults, inputSearch, searchDone, error, showGrid } = state;
 
-  const url = `https://itunes.apple.com/search?term=${inputSearch}&entity=album&limit=20`;
+  const url = `https://itunes.apple.com/search?term=${inputSearch}&entity=album&limit=21`;
 
   const searchMusic = async (event) => {
     if (!inputSearch) {

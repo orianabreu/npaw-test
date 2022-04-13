@@ -17,9 +17,9 @@ export const Paragraph = styled(Typography)(({ theme }) => ({
 export const TextContainer = styled('div')({
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-between',
     alignItems: 'center',
     textAlign: 'center',
-    height: '250px',
-    marginBottom: '3rem'
+    height: '220px',
+    margin: '3rem 0'
 })

@@ -3,6 +3,6 @@ import Box from "@mui/material/Box";
 
 export const Wrapper = styled(Box)(({ showGrid }) => ({
     flexGrow: 1,
-    marginTop: '50px',
+    marginTop: '3rem',
     width: showGrid ? '100%' : '40%'
 }));

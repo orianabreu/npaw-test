@@ -21,5 +21,5 @@ export const Input = styled('input')(({ theme }) => ({
 
 export const IconContainer = styled(Fab)(({ theme }) => ({
     backgroundColor: theme.palette.light.main,
-    marginTop: '50px'
+    marginTop: '3rem'
 }));
