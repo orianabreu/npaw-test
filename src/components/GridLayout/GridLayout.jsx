@@ -3,9 +3,9 @@ import Grid from "@mui/material/Grid";
 
 import { Wrapper } from "./GridLayoutStyles";
 
-export default function GridLayout({ children }) {
+export default function GridLayout({ children, showGrid }) {
   return (
-    <Wrapper sx={{ flexGrow: 1 }}>
+    <Wrapper showGrid={showGrid}>
       <Grid
         container
         spacing={5}

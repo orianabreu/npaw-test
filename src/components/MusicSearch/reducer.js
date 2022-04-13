@@ -3,6 +3,7 @@ export const initialState = {
   searchResults: [],
   searchDone: false,
   error: null,
+  showGrid: true
 };
 
 export const reducer = (state, action) => {
@@ -29,6 +30,7 @@ export const reducer = (state, action) => {
       return {
         ...state,
         error: action.payload,
+        searchDone: false
       };
     }
     case "no-error": {
@@ -41,6 +43,12 @@ export const reducer = (state, action) => {
       return {
         ...state,
         searchDone: true,
+      };
+    }
+    case "show-grid": {
+      return {
+        ...state,
+        showGrid: !state.showGrid,
       };
     }
     default:

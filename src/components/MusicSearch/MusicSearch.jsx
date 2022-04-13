@@ -1,15 +1,17 @@
 import React, { useReducer } from "react";
 import axios from "axios";
-import Grid from '@mui/material/Grid';
+import Grid from "@mui/material/Grid";
+import GridOnIcon from "@mui/icons-material/GridOn";
+import GridOffIcon from "@mui/icons-material/GridOff";
 
 import AlbumCard from "../AlbumCard/AlbumCard";
 import { initialState, reducer } from "./reducer";
-import { Input } from "./MusicSearchStyles";
+import { Input, IconContainer } from "./MusicSearchStyles";
 import GridLayout from "../GridLayout/GridLayout";
 
 export default function MusicSearch() {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const { searchResults, inputSearch, searchDone, error } = state;
+  const { searchResults, inputSearch, searchDone, error, showGrid } = state;
 
   const url = `https://itunes.apple.com/search?term=${inputSearch}&entity=album&limit=20`;
 
@@ -21,21 +23,26 @@ export default function MusicSearch() {
       dispatch({ type: "no-error" });
     }
 
-    if (event.key === "Enter") {
+    if (event.key === "Enter" && inputSearch) {
       try {
         const response = await axios(url);
         console.log(response.data.results);
         dispatch({ type: "get-api-data", data: response.data.results });
+        dispatch({ type: "show-results" });
       } catch (error) {
         console.log(error.message);
         dispatch({ type: "error", payload: error.message });
       }
-      dispatch({ type: "show-results" });
     }
   };
 
   const handleChange = (e) => {
     dispatch({ type: "search", payload: e.target.value });
+  };
+
+  const changeGridLayout = () => {
+    console.log("grid changed");
+    dispatch({ type: "show-grid" });
   };
 
   return (
@@ -49,13 +56,22 @@ export default function MusicSearch() {
 
       {error && <p>{error}</p>}
 
-      <GridLayout>
+      {searchDone && (
+        <IconContainer onClick={changeGridLayout}>
+          {showGrid ? (
+            <GridOnIcon />
+          ) : (
+            <GridOffIcon />
+          )}
+        </IconContainer>
+      )}
+
+      <GridLayout showGrid={showGrid}>
         {searchDone &&
           searchResults.map((album, index) => {
             return (
-              <Grid item sm={12} md={2} lg={2}>
+              <Grid item sm={12} md={showGrid ? 2 : 12} key={index}>
                 <AlbumCard
-                  key={index}
                   artwork={album.artworkUrl100}
                   artist={album.artistName}
                   albumName={album.collectionName}

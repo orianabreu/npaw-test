@@ -1,4 +1,5 @@
 import { alpha, styled } from '@mui/material/styles';
+import Fab from "@mui/material/Fab";
 
 export const Input = styled('input')(({ theme }) => ({
     width: '30%',
@@ -16,4 +17,9 @@ export const Input = styled('input')(({ theme }) => ({
     '&:hover': {
       borderColor: theme.palette.dark.main,
     }
+}));
+
+export const IconContainer = styled(Fab)(({ theme }) => ({
+    backgroundColor: theme.palette.light.main,
+    marginTop: '50px'
 }));
