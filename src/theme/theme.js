@@ -18,6 +18,10 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: "Helvetica Neue, Arial, sans-serif",
+    h1: "3rem",
+    h2: "2.5rem",
+    h3: "2rem",
+    paragraph: "1rem"
   }
 });
 
