@@ -6,5 +6,6 @@ export const SectionContent = styled('div')({
     justifyContent: 'center',
     alignItems: 'center',
     maxWidth: '100vw',
+    minHeight: '100vh',
     padding: '2rem 5rem'
 })

@@ -4,6 +4,7 @@ import theme from "./theme/theme";
 import GlobalStyle from "./theme/global";
 import NavBar from "./components/NavBar/NavBar";
 import Main from "./pages/Main/Main";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <GlobalStyle />
       <NavBar />
       <Main />
+      <Footer />
     </ThemeProvider>
   );
 }
