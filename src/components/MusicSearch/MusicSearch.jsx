@@ -8,6 +8,7 @@ import AlbumCard from "../AlbumCard/AlbumCard";
 import { initialState, reducer } from "./reducer";
 import { Input, IconContainer } from "./MusicSearchStyles";
 import GridLayout from "../GridLayout/GridLayout";
+import ErrorMessage from "../ErrorMessage/ErrorMessage";
 
 export default function MusicSearch() {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -54,7 +55,7 @@ export default function MusicSearch() {
         onKeyDown={searchMusic}
       />
 
-      {error && <p>{error}</p>}
+      {error && <ErrorMessage>{error}</ErrorMessage>}
 
       {searchDone && (
         <IconContainer onClick={changeGridLayout}>

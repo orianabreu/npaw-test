@@ -1,5 +1,5 @@
 import { createTheme } from "@mui/material";
-import { deepOrange, pink, grey } from "@mui/material/colors";
+import { deepOrange, pink, grey, amber } from "@mui/material/colors";
 
 const theme = createTheme({
   palette: {
@@ -14,6 +14,9 @@ const theme = createTheme({
     },
     light: {
       main: grey[50]
+    },
+    error: {
+      main: amber[500]
     }
   },
   typography: {
