@@ -21,4 +21,5 @@ export const TextContainer = styled('div')({
     alignItems: 'center',
     textAlign: 'center',
     height: '250px',
+    marginBottom: '3rem'
 })
