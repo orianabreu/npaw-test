@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
     body {
         min-height: 100vh;
         background: rgb(255,87,34);
-        background: linear-gradient(138deg, rgba(255,87,34,1) 0%, rgba(240,98,146,1) 50%);
+        background: linear-gradient(90deg, rgba(255,87,34,1) 0%, rgba(240,98,146,1) 58%);
     }
 `;
 

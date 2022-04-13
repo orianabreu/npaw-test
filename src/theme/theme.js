@@ -21,6 +21,7 @@ const theme = createTheme({
     h1: "3rem",
     h2: "2.5rem",
     h3: "2rem",
+    h4: "1.5rem",
     paragraph: "1rem"
   }
 });
