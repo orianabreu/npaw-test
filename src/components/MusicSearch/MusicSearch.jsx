@@ -1,11 +1,11 @@
 import React, { useReducer } from "react";
 import axios from "axios";
-import IconButton from "@mui/material/IconButton";
-import SearchIcon from "@mui/icons-material/Search";
+import Grid from '@mui/material/Grid';
 
 import AlbumCard from "../AlbumCard/AlbumCard";
 import { initialState, reducer } from "./reducer";
 import { Input } from "./MusicSearchStyles";
+import GridLayout from "../GridLayout/GridLayout";
 
 export default function MusicSearch() {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -32,7 +32,6 @@ export default function MusicSearch() {
       }
       dispatch({ type: "show-results" });
     }
-    
   };
 
   const handleChange = (e) => {
@@ -47,21 +46,24 @@ export default function MusicSearch() {
         onChange={handleChange}
         onKeyDown={searchMusic}
       />
-      {/* <button onClick={searchMusic}>search</button> */}
 
       {error && <p>{error}</p>}
 
-      {searchDone &&
-        searchResults.map((album, index) => {
-          return (
-            <AlbumCard
-              key={index}
-              artwork={album.artworkUrl100}
-              artist={album.artistName}
-              albumName={album.collectionName}
-            />
-          );
-        })}
+      <GridLayout>
+        {searchDone &&
+          searchResults.map((album, index) => {
+            return (
+              <Grid item sm={12} md={2} lg={2}>
+                <AlbumCard
+                  key={index}
+                  artwork={album.artworkUrl100}
+                  artist={album.artistName}
+                  albumName={album.collectionName}
+                />
+              </Grid>
+            );
+          })}
+      </GridLayout>
     </>
   );
 }

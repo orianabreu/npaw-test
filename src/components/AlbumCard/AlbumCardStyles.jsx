@@ -3,10 +3,11 @@ import CardMedia from '@mui/material/CardMedia';
 import Card from '@mui/material/Card';
 
 export const CardContainer = styled(Card)({
-    width: '20%',
+    width: 'fit-parent',
 })
 
 export const CardImage = styled(CardMedia)({
     width: '100%',
-    height: '50%'
+    height: '450px',
+    backgroundSize: 'cover'
 })
